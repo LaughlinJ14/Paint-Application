@@ -1,0 +1,123 @@
+﻿<Window x:Class="Paint_Application2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paint_Application2"
+        mc:Ignorable="d"
+        Title="Paint App" Height="480" Width="800">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Save" Click="SaveBtn_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Save.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Close" Click="CloseBtn_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Close.ico"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55*"/>
+                <ColumnDefinition Width="425*"/>
+            </Grid.ColumnDefinitions>
+            
+            <InkCanvas Grid.Column="1" Width="Auto" Name="myCanvas" 
+                   MouseMove="myCanvas_MouseMove"/>
+            
+            <StackPanel Grid.Column="0" Background="Gray">
+                
+                    <Button Height="25" Width="60" Click="SelectionBtn_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Select_16x.png" Stretch="None"></Image>
+                            <TextBlock>Select</TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                    <StackPanel Orientation="Horizontal" Width="70" Margin="13,0,0,0">
+                    <Button Name="White" Background="White" Width="25"
+                    Height="25" Margin="2" Click="White_Click"/>
+                    <Button Name="Black" Background="Black" Width="25" 
+                    Height="25" Margin="2" Click="Black_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="70" Margin="13,0,0,0">
+                    <Button Name="PaleVioletRed" Background="PaleVioletRed" Width="25" 
+                    Height="25" Margin="2" Click="PaleVioletRed_Click"/>
+                    <Button Name="DarkRed" Background="DarkRed" Width="25"
+                    Height="25" Margin="2" Click="DarkRed_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="70" Margin="13,0,0,0">
+                    <Button Name="Orange" Background="Orange" Width="25"
+                    Height="25" Margin="2" Click="Orange_Click"/>
+                    <Button Name="DarkOrange" Background="DarkOrange" Width="25" 
+                    Height="25" Margin="2" Click="DarkOrange_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="70" Margin="13,0,0,0">
+                    <Button Name="LightYellow" Background="LightYellow" Width="25"
+                    Height="25" Margin="2" Click="LightYellow_Click"/>
+                    <Button Name="Yellow" Background="Yellow" Width="25"
+                    Height="25" Margin="2" Click="Yellow_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="70" Margin="13,0,0,0">
+                    <Button Name="LightGreen" Background="LightGreen" Width="25"
+                    Height="25" Margin="2" Click="LightGreen_Click"/>
+                    <Button Name="DarkGreen" Background="DarkGreen" Width="25"
+                    Height="25" Margin="2" Click="DarkGreen_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="70" Margin="13,0,0,0">
+                    <Button Name="LightBlue" Background="LightBlue" Width="25"
+                    Height="25" Margin="2" Click="LightBlue_Click"/>
+                    <Button Name="Blue" Background="Blue" Width="25"
+                    Height="25" Margin="2" Click="Blue_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="70" Margin="13,0,0,0">
+                    <Button Name="Lavender" Background="Lavender" Width="25"
+                    Height="25" Margin="2" Click="Lavender_Click"/>
+                    <Button Name="Purple" Background="Purple" Width="25"
+                    Height="25" Margin="2" Click="Purple_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="70" Margin="13,0,0,0">
+                    <Button Name="Pink" Background="Pink" Width="25"
+                    Height="25" Margin="2" Click="Pink_Click"/>
+                    <Button Name="DeepPink" Background="DeepPink" Width="25"
+                    Height="25" Margin="2" Click="DeepPink_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="70" Margin="13,0,0,0">
+                    <Button Name="SandyBrown" Background="SandyBrown" Width="25"
+                    Height="25" Margin="2" Click="SandyBrown_Click"/>
+                    <Button Name="Brown" Background="Brown" Width="25"
+                    Height="25" Margin="2" Click="Brown_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="70" Margin="13,0,0,0">
+                    <Button Name="LightGray" Background="LightGray" Width="25"
+                    Height="25" Margin="2" Click="LightGray_Click"/>
+                    <Button Name="DarkGray" Background="DarkGray" Width="25"
+                    Height="25" Margin="2" Click="DarkGray_Click"/>
+                </StackPanel>
+
+                <Button Height="25" Width="60" Click="EraseBtn_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Eraser_16x.png" Stretch="None"></Image>
+                        <TextBlock>Erase</TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Height="25" Width="60" Click="ClearBtn_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Close_red_16x.png" Stretch="None"></Image>
+                        <TextBlock>Clear</TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Label Name="XCoord"/>
+                <Label Name="YCoord"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>
